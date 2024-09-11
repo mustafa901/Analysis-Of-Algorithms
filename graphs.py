@@ -1,12 +1,17 @@
 # HomeWork 1 Graphing
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+import numpy as np
 
 sum1 = pd.read_csv("/workspaces/DISCO/sum1_runtimes.csv")
 sum2 = pd.read_csv("/workspaces/DISCO/sum2_runtimes.csv")
 
 print(sum1)
 print(sum2)
+
+plt.scatter(sum1, sum2)
+plt.show
 
 # Printing out the graphs and recognizing the patterns
 # 1. Provide a plot of the results of your timing experiment.
