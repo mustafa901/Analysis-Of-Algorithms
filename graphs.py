@@ -5,13 +5,25 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 sum1 = pd.read_csv("/workspaces/DISCO/sum1_runtimes.csv")
-sum2 = pd.read_csv("/workspaces/DISCO/sum2_runtimes.csv")
+#sum2 = pd.read_csv("/workspaces/DISCO/sum2_runtimes.csv")
 
 print(sum1)
-print(sum2)
+#print(sum2)
 
-plt.scatter(sum1, sum2)
-plt.show
+variable1 = sum1['n']
+variable2 = sum1['time']
+
+# Create a plot
+plt.figure(figsize=(10, 6))
+plt.plot(variable1, label='n')
+plt.plot(variable2, label='time')
+
+
+# Show the plot
+plt.show()
+
+# Save the plot as a PNG file
+plt.savefig("timing_experiment_plot.png")
 
 # Printing out the graphs and recognizing the patterns
 # 1. Provide a plot of the results of your timing experiment.
