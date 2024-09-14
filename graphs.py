@@ -10,13 +10,6 @@ sum1 = pd.read_csv("/workspaces/DISCO/sum1_runtimes.csv")
 print(sum1)
 #print(sum2)
 
-variable1 = sum1['n']
-variable2 = sum1['time']
-
-# Create a plot
-plt.figure(figsize=(10, 6))
-plt.plot(variable1, label='n')
-plt.plot(variable2, label='time')
 
 
 # Show the plot
