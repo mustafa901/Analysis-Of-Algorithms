@@ -27,23 +27,23 @@ public:
 	int getCapacity() {return capacity;}
 
 	int parentIndex(int i) {
-		// TO DO: implement this function
-		return 0;
+		return (i - 1) / 2;
 	}
 
 	int leftChildIndex(int i) {
-		// TO DO: implement this function
-		return 0;
+		return 2 * i + 1;
 	}
 
 	int rightChildIndex(int i) {
-		// TO DO: implement this function
-		return 0;
+		return 2 * i + 2;
 	}
 
 	int getMax() {
-		// TO DO: implement this function
-		return 0;
+		if (size == 0) {
+			cout << "Heap is empty; no maximum value.\n";
+			return -1;
+		}
+		return heap[0];
 	}
 
 	int extractMax() {
@@ -52,51 +52,50 @@ public:
 			return -1;
 		}
 
-		// swap the current max with the last item in the heap
+		int maxVal = heap[0];
+		heap[0] = heap[size - 1];
+		size--;
 
-		// decrement the size of the heap
+		int current = 0;
+		while (true) {
+			int left = leftChildIndex(current);
+			int right = rightChildIndex(current);
+			int largest = current;
 
-		// set current to index 0 (the root)
-		// find the index of the left and right children of the root
+			if (left < size && heap[left] > heap[largest]) {
+				largest = left;
+			}
+			if (right < size && heap[right] > heap[largest]) {
+				largest = right;
+			}
 
-		// while the current index is in range, and:
-			// the index of the left child is in range and the left child is greater than the current value
-			// or
-			// the index of the right child is in range and the right child is greater than the current value
+			if (largest != current) {
+				swap(heap[current], heap[largest]);
+				current = largest;
+			} else {
+				break;
+			}
+		}
 
-			// if both indices are in range and the left child is greater than the right child, or if the right child is out of range
-				// swap current with its left child
-				// update the index of current
-			// else if right child is in range
-				// swap current with its right child
-				// update the index of current
-
-			// update the indices of the left and right children for the new index of current
-
-		// return the maximum value which was removed
-		return 0;
+		return maxVal;
 	}
 
 	void insert(int val) {
-		if (capacity == size) { 
-        	cout << "Heap is full; unable to insert\n"; 
-        	return; 
-    	}
+		if (capacity == size) {
+			cout << "Heap is full; unable to insert\n";
+			return;
+		}
 
-    	// assign val to the next open index
+		int current = size;
+		heap[size] = val;
+		size++;
 
-    	// increment size
-
-    	// set current to be the index where val was just added
-    	// find the parent index of current
-
-    	// while the parent index is at least 0 and the parent is less than current
-    		// swap parent and current
-    		// update the index of current
-    		// update the index of parent for the new index of current
-
-    	return;
+		while (current > 0 && heap[parentIndex(current)] < heap[current]) {
+			swap(heap[current], heap[parentIndex(current)]);
+			current = parentIndex(current);
+		}
 	}
+
 
 	void printHeap() {
 		int level = 1;
