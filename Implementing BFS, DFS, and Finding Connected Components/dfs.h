@@ -20,7 +20,7 @@ void dfs(AdjacencyList* graph, int start, int numNodes){
 	// to_visit tracks nodes that need to be explored, stored in a stack
 	std::stack<int> to_visit;
 	visited[start] = true;
-    to_visit.push(start);
+    	to_visit.push(start);
 
 	// WHAT SHOULD YOU DO HERE?
 
