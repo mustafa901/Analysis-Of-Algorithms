@@ -29,9 +29,9 @@ void dfs(AdjacencyList* graph, int start, int numNodes){
 	// while there are still nodes to explore
 	while (!to_visit.empty()){
 		// WHAT SHOULD YOU DO HERE?
-        int current = to_visit.top();
-        to_visit.pop();
-        std::cout << current << " ";
+        	int current = to_visit.top();
+        	to_visit.pop();
+        	std::cout << current << " ";
 
         for (auto neighbor : *(graph->neighbors(current))) {
             if (!visited[neighbor]) {
