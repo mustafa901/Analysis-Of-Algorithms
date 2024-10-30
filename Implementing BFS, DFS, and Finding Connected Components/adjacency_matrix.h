@@ -64,7 +64,8 @@ public:
 
 			// TO DO: update the adjacency matrix to include this edge
 			// YOUR CODE HERE
-
+			adjMatrix[v1][v2] = 1;  
+			adjMatrix[v2][v1] = 1; 
 
 		}
 

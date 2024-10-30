@@ -64,7 +64,8 @@ public:
 
 			// TO DO: update the adjacency list to include this edge. Use the list member function push_back, and remember that adjList[x] is a pointer to a list.
 			// YOUR CODE HERE
-			
+			adjList[v1]->push_back(v2); 
+			adjList[v2]->push_back(v1);
 
 		}
 
