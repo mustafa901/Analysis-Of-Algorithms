@@ -9,6 +9,7 @@ using namespace std;
 void test_adjacency_matrix(string filename, int numNodes, bool print_progress){
 	// Takes a file name and a number of nodes, and prints the adjacency matrix for the graph
 
+
 	cout << "Processing " << filename << ":\n";
 	AdjacencyMatrix mat(filename, numNodes, print_progress);
 	cout << "Adjacency Matrix:\n";
